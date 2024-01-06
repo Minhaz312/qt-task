@@ -83,14 +83,13 @@ export default function List({title,data,isLoading}) {
         }
     }
     const handleSelectImage = (e) => {
-        const file = e.target.files[0]
-        const reader = new FileReader()
+        const file = e.target.files[0];
+        const reader = new FileReader();
         reader.onloadend = (e) => {
             setNewItemImage(e.target.result);
-        }
-        reader.readAsDataURL(file)
+        };
+        reader.readAsDataURL(file);
     }
-    console.log(isLoading,itemList)
     if (isLoading) {
         return (
             <div>

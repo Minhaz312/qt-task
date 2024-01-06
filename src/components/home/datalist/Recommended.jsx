@@ -26,8 +26,12 @@ export default function Recommended() {
         getRecommended()
     },[])
   return (
-      <div className='my-5'>
-          {itemList === null && <h1>Failed to load</h1>}
+      <div className="my-5">
+          {itemList === null && (
+              <div className="text-center my-3 bg-primary/20 py-10">
+                  <h1 className="text-slate-600 text-xl">Failed to load</h1>
+              </div>
+          )}
           {itemList !== null && (
               <List title="Recommended" isLoading={loading} data={itemList} />
           )}
